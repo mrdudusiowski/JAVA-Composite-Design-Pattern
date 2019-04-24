@@ -17,7 +17,7 @@ class Podrozdzial extends JednostkaWzorcowa {
 
     @Override
     public void wypiszInfo() {
-        System.out.println("    "+numer + " " + nazwa);
+        System.out.println("    "+nazwa);     
     }
 
 }

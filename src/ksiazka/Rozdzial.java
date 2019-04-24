@@ -16,7 +16,7 @@ class Rozdzial extends JednostkaWzorcowa {
     protected ArrayList<JednostkaWzorcowa> skladowe = new ArrayList();
 
     public Rozdzial(String nazwa, String numer) {
-        super(nazwa, numer);
+        super(numer, nazwa);
     }
 
     public void dodaj(JednostkaWzorcowa j) {
@@ -25,8 +25,11 @@ class Rozdzial extends JednostkaWzorcowa {
 
     @Override
     public void wypiszInfo() {
-        System.out.println(numer + " " + nazwa + "    ");
+        int i = 1;
+        System.out.println(" " + nazwa + "    ");
         for (JednostkaWzorcowa j : skladowe) {
+            System.out.print("  " + i++);
+
             j.wypiszInfo();
         }
     }
