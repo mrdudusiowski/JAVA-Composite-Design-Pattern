@@ -1,23 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ksiazka;
 
-/**
- *
- * @author Student
- */
-class Podrozdzial extends JednostkaWzorcowa {
 
-    public Podrozdzial(String nazwa, String numer) {
-        super(numer, nazwa);
+class Podrozdzial extends JednostkaWzorcowa {
+    
+    protected java.util.List<JednostkaWzorcowa> skladowe = new java.util.ArrayList();
+    
+    
+    public Podrozdzial(String nazwa) {
+        super(nazwa);
     }
 
     @Override
-    public void wypiszInfo() {
-        System.out.println("    "+nazwa);     
+    public void wypiszInfo(int numer1, int numer2) {
+        short numer3 = 1;
+        
+        
+       
+        System.out.println(" " + nazwa + "    ");
+        for (JednostkaWzorcowa j : skladowe) {
+
+            System.out.print("          " + numer1 + "." + numer2 + "." + numer3 + ")  ");
+
+            j.wypiszInfo(numer1, numer2);
+            numer3++;
+
+        }
     }
 
 }
